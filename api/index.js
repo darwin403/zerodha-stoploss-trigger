@@ -5,7 +5,10 @@ const { ceilToTick, roundToTick } = require("../utils");
 
 app.use(express.json());
 
-app.all("/api", async (req, res, next) => {
+// to test post back:
+// https://kite.trade/forum/discussion/9857/how-do-i-test-zerodha-postback-after-market-hours
+
+app.post("/api", async (req, res, next) => {
   let { encToken } = req.query;
   const kite = new KiteConnect({ enc_token: encToken });
   const position = req.body;
