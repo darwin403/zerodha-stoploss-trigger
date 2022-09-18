@@ -46,7 +46,7 @@ app.post("/api", async (req, res, next) => {
 });
 
 // for deploying as several function
-if (NODE_ENV !== "production") {
+if (process.env.NODE_ENV !== "production") {
   app.listen(8081, () => {
     console.log(`Example app listening on port`);
   });
