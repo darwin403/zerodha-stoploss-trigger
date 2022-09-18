@@ -1,0 +1,21 @@
+{
+  "name": "zerodha-stoploss-trigger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "api/index.js",
+    "dev": "nodemon api/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "kiteconnect": "https://github.com/darwin403/kiteconnectjs"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
