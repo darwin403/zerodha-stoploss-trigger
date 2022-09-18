@@ -34,15 +34,20 @@ app.post("/api", async (req, res, next) => {
     variety: position["variety"],
   };
 
-  console.log("Placing SL for:", position["order_id"], orderParams);
+  let response;
 
   try {
     // place order
-    const order = await kite.placeOrder(position["variety"], orderParams);
-    res.json(order);
+    response = await kite.placeOrder(position["variety"], orderParams);
   } catch (err) {
-    res.json({ err, orderParams });
+    response = err;
   }
+
+  const result = { response, orderParams };
+
+  console.log("Placing SL for:", result);
+
+  res.json(result);
 });
 
 // for deploying as several function
