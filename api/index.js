@@ -5,7 +5,7 @@ const { ceilToTick, roundToTick } = require("../utils");
 
 app.use(express.json());
 
-app.post("/api", async (req, res, next) => {
+app.all("/api", async (req, res, next) => {
   let { encToken } = req.query;
   const kite = new KiteConnect({ enc_token: encToken });
   const position = req.body;
